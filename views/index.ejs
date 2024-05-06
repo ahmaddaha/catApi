@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="/dist/css/bootstrap.min.css" />
+</head>
+<body>
+   
+
+    <div class="album py-5 bg-body-tertiary">
+        <div class="container">
+            <h1 class="bd-title mb-0 ali text-center mb-5" id="content">Cat Pictures</h1>
+    
+          <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+            <% results.forEach(index => { %>
+                
+          
+            <div class="col">
+              <div class="card shadow-sm">
+                <img class="bd-placeholder-img card-img-top" width="" height="200" src="<%= index.url %>" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect>
+                <div class="card-body">
+                  <p class="card-text"><%= index.breeds[0].description %></p>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                      
+                      
+                        <form action="/submit" method="post">
+                      <button  class="btn btn-sm btn-outline-secondary" name="id" value="<%= index.id %>" >View</button>
+                   
+                    
+                    </form>
+                    
+                    
+                    </div>
+                    <small class="text-body-secondary">9 mins</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+       <% }); %>
+
+
+
+          
+          </div>
+        </div>
+      </div>
+
+
+</body>
+</html>
